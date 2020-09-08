@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Login Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript">
+        function validate() {
+            var username = document.getElementById("username");
+            var passwrord = document.getElementById("password");
+            
+            if (username.value == "admin" && passwrord.value == "user") {
+                alert("Login Succesfull");
+                return true;
+            }
+            else if (username.value.trim() == "" && passwrord.value.trim() == "") {
+                alert("please fill the details");
+                return false;
+            }
+            else if (username.value.trim() == "") {
+                alert("Please fill username");
+                return false;
+            }
+            else if (passwrord.value.trim() == "") {
+                alert("Please fill password");
+                return false;
+            }
+            else if (passwrord.value.trim().length>5) {
+                alert("Password too long");
+                return false;
+            }
+            else {
+                alert("login falied");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <form   onsubmit="return validate()" action="Message.html" class="box" method="post">
+        <h1>Login</h1>
+        <input type="text" placeholder="Enter Username" name="" id="username"/>
+        <br /><br />
+        <input type="password" placeholder="Enter Password" name="" id="password"/>
+        <br /><br />
+        <input type="submit" value="Login" />
+    </form>
+</body>
+</html>
